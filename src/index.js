@@ -15,7 +15,11 @@ const App = () => {
       <Stack.Navigator>
         {state.isLogin ? (
           <>
-            <Stack.Screen name="Tabbar" component={Tabbar} />
+            <Stack.Screen
+              name="Tabbar"
+              component={Tabbar}
+              options={{headerShown: false}}
+            />
             <Stack.Screen name="GoodsList" component={GoodsList} />
             <Stack.Screen name="GoodsDetail" component={GoodsDetail} />
           </>
