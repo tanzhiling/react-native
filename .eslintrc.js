@@ -8,5 +8,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react-native/no-inline-styles': 0,
   },
 };

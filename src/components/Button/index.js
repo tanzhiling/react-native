@@ -1,10 +1,8 @@
 import React from 'react';
 import {TouchableHighlight, View, Text} from 'react-native';
-import Design from '../../utils/design';
 import Theme from '../../utils/theme';
-const Button = ({children, style, ...props}) => {
+const Button = ({children, style, size = 16, ...props}) => {
   const styles = {
-    fontSize: Design.setSpText(14),
     backgroundColor: Theme.primaryColor,
     justifyContent: 'center',
     alignItems: 'center',
@@ -13,7 +11,7 @@ const Button = ({children, style, ...props}) => {
   return (
     <TouchableHighlight underlayColor="transparent" {...props}>
       <View style={styles}>
-        <Text style={{color: Theme.white, fontSize: Design.setSpText(16)}}>
+        <Text color={Theme.white} size={size}>
           {children}
         </Text>
       </View>

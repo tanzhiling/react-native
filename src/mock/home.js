@@ -184,8 +184,82 @@ export const ActivityJson = [
 export const FloorJson = [
   {
     id: '1',
-    goodsName: '华为nova7se 5G手机 幻夜黑 8+128G 全网通',
+    goodsName:
+      '鑫乐全麦粉4kg绿色食品 内蒙古河套平原面粉小麦粉含麸皮 面包馒头烙饼 烘焙高筋面粉',
+    godosPrice: 24.9,
     url:
-      'http://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/128049/10/1142/69776/5eba1316Ec6be02f9/9bdea4b7e2225a65.jpg',
+      'http://img12.360buyimg.com/mobilecms/s372x372_jfs/t1/127714/21/3715/267006/5ed5b4ddE347d26f8/477453f287dd584f.jpg',
+  },
+  {
+    id: '2',
+    goodsName:
+      '超媛春夏夏装新款短袖衬衫男潮流百搭半袖寸衫男士衬衣休闲男士衬衫短XCD1001-B#8559#我 灰色',
+    godosPrice: 105.9,
+    url:
+      'http://img12.360buyimg.com/mobilecms/s372x372_jfs/t1/95572/21/15913/368688/5e75d202E6eb9d710/1ea0797bd22f7f82.jpg',
+  },
+  {
+    id: '3',
+    goodsName:
+      '长虹波轮洗衣机全自动 家用大容量自动洗脱一体机 宿舍租房用小型迷你洗衣机带甩干风干预约快洗 8.2公斤热烘干款',
+    godosPrice: 795,
+    url:
+      'http://img10.360buyimg.com/mobilecms/s372x372_jfs/t1/94626/12/18537/481332/5e9c41e8E5bcf719c/4fab700760f939ca.jpg',
+  },
+  {
+    id: '4',
+    goodsName:
+      '厨房置物架3层微波炉架子不锈钢落地三层收纳储物调料烤箱置物架 长60cm*宽40cm*高82cm',
+    godosPrice: 281,
+    url:
+      'http://img10.360buyimg.com/mobilecms/s372x372_jfs/t1/101384/23/14674/176743/5e70d802Eb0b05bc6/5fa83da54d40ec54.jpg',
+  },
+  {
+    id: '5',
+    goodsName:
+      '罗蒙（ROMON）小白鞋男板鞋2020经典百搭潮流韩版透气防滑耐磨休闲鞋男LM066 066 米白色 42（码数偏大建议选小一码）',
+    godosPrice: 238,
+    url:
+      'http://img14.360buyimg.com/mobilecms/s372x372_jfs/t1/106068/37/19551/108226/5ea11389E4364074a/2fb11fd3ca99e954.jpg',
+  },
+  {
+    id: '6',
+    goodsName:
+      '华为 (HUAWEI) WS5200 增强版双千兆路由器 1200M双频wifi 无线家用穿墙 5G双频智能无线路由 高速路由 IPv6 ',
+    godosPrice: 159,
+    url:
+      'http://img12.360buyimg.com/mobilecms/s372x372_jfs/t1/32957/30/1076/106713/5c457840E7f26d493/8a575f6e9c08eeed.jpg',
+  },
+  {
+    id: '7',
+    goodsName:
+      '喜临门 3D椰棕床垫 精钢邦尼尔弹簧床垫 棕垫 主卧次卧床垫 流年1800*2000',
+    godosPrice: 1899,
+    url:
+      'http://img12.360buyimg.com/mobilecms/s372x372_jfs/t1/48703/31/14046/342181/5dae6803E986d16c4/d4b84afa4e36c357.jpg',
+  },
+  {
+    id: '8',
+    goodsName:
+      '美国进口 Elta MD 氨基酸洁面乳 207ml/瓶 弱酸性卸妆清洁洗面奶 敏感肌可用',
+    godosPrice: 185,
+    url:
+      'http://img10.360buyimg.com/mobilecms/s372x372_jfs/t26929/334/2624827072/185269/e2ccd05a/5cd560c7N83f7d70c.jpg',
+  },
+  {
+    id: '9',
+    goodsName:
+      '艾星（AIXING） 餐桌 简约实木餐桌椅组合套装 现代时尚大理石小户型饭桌子餐台家具 2301/1.3米大理石餐桌+【A款椅*4】',
+    godosPrice: 2286,
+    url:
+      'http://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/148219/2/70/260595/5edb8488E724d4345/72b80ff757825c1d.jpg',
+  },
+  {
+    id: '10',
+    goodsName:
+      '厨房手推车置物架蔬菜篮菜架家用调料用品储物收纳架可移动带轮子 三层(3篓筐)加大号',
+    godosPrice: 160,
+    url:
+      'http://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/96711/39/15455/387697/5e71e9c0Ecc2eb208/6d6b2ab3ff8dc000.jpg',
   },
 ];

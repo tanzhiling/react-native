@@ -16,6 +16,7 @@ import {
   MsJson,
   ActivityJson,
   ActivityBgImage,
+  FloorJson,
 } from '../../mock/home';
 import Design from '../../utils/design';
 import Theme from '../../utils/theme';
@@ -37,16 +38,10 @@ const styles = StyleSheet.create({
     paddingLeft: Design.autoWidth(15),
     paddingRight: Design.autoWidth(15),
   },
-  scrollView: {
-    paddingBottom: Design.autoheight(40),
-  },
   banner: {
     alignItems: 'center',
     paddingTop: Design.autoheight(10),
     paddingBottom: Design.autoheight(10),
-  },
-  bannerBg: {
-    height: Design.autoheight(80),
   },
   bannerSwiper: {
     width: Design.autoWidth(355),
@@ -87,11 +82,6 @@ const styles = StyleSheet.create({
     paddingLeft: Design.autoWidth(10),
     paddingRight: Design.autoWidth(10),
   },
-  msHeadLeftText: {
-    fontSize: Design.setSpText(14),
-    fontWeight: '700',
-    color: Theme.black,
-  },
   msBody: {
     height: Design.autoWidth(120),
     flexDirection: 'row',
@@ -102,18 +92,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  msBodyImage: {
-    width: Design.autoWidth(68),
-    height: Design.autoWidth(68),
-  },
-  msBodyPrice: {
-    color: Theme.red,
-    fontSize: Design.setSpText(16),
-  },
-  msBodyLastPrice: {
-    textDecorationLine: 'line-through',
-    color: Theme.grey,
-  },
   activity: {
     paddingLeft: Design.autoWidth(10),
     paddingRight: Design.autoWidth(10),
@@ -122,11 +100,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: Design.autoWidth(40),
     justifyContent: 'center',
-  },
-  activityBody: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
   },
   activityItemBg: {
     width: Design.autoWidth(87),
@@ -146,6 +119,18 @@ const styles = StyleSheet.create({
     bottom: Design.autoWidth(5),
     color: Theme.white,
   },
+  wrapRow: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  floorItem: {
+    width: Design.autoWidth(175),
+    backgroundColor: Theme.white,
+    marginBottom: Design.autoWidth(5),
+    overflow: 'hidden',
+    borderRadius: 5,
+  },
 });
 const Home = () => {
   return (
@@ -153,10 +138,11 @@ const Home = () => {
       <View style={styles.header}>
         <TextInput style={styles.search} placeholder="手机" />
       </View>
-      <ScrollView contentContainerStyle={styles.scrollView}>
+      <ScrollView
+        contentContainerStyle={{paddingBottom: Design.autoheight(40)}}>
         <ImageBackground
           style={styles.banner}
-          imageStyle={styles.bannerBg}
+          imageStyle={{height: Design.autoheight(80)}}
           source={{uri: BannerBgImage}}>
           <View style={styles.bannerSwiper}>
             <Swiper
@@ -190,19 +176,30 @@ const Home = () => {
         </View>
         <View style={styles.ms}>
           <View style={styles.msHead}>
-            <Text style={styles.msHeadLeftText}>限时秒杀</Text>
+            <Text size={14} color={Theme.black} style={{fontWeight: '700'}}>
+              限时秒杀
+            </Text>
           </View>
           <View style={styles.msBody}>
             <ScrollView horizontal>
               {MsJson.map((item) => (
                 <View key={item.id} style={styles.msBodyItem}>
                   <Image
-                    style={styles.msBodyImage}
+                    style={{
+                      width: Design.autoWidth(68),
+                      height: Design.autoWidth(68),
+                    }}
                     resizeMode={'stretch'}
                     source={{uri: item.url}}
                   />
-                  <Text style={styles.msBodyPrice}>￥{item.price}</Text>
-                  <Text style={styles.msBodyLastPrice}>￥{item.lastPrice}</Text>
+                  <Text color={Theme.red} size={16}>
+                    ￥{item.price}
+                  </Text>
+                  <Text
+                    color={Theme.grey}
+                    style={{textDecorationLine: 'line-through'}}>
+                    ￥{item.lastPrice}
+                  </Text>
                 </View>
               ))}
             </ScrollView>
@@ -210,9 +207,9 @@ const Home = () => {
         </View>
         <View style={styles.activity}>
           <View style={styles.activityHead}>
-            <Text>精选会场</Text>
+            <Text style={{fontSize: Design.setSpText(16)}}>精选会场</Text>
           </View>
-          <View style={styles.activityBody}>
+          <View style={styles.wrapRow}>
             {ActivityJson.map((item) => (
               <ImageBackground
                 key={item.id}
@@ -230,7 +227,33 @@ const Home = () => {
         </View>
         <View style={styles.activity}>
           <View style={styles.activityHead}>
-            <Text>为你推荐</Text>
+            <Text size={16}>为你推荐</Text>
+          </View>
+          <View style={styles.wrapRow}>
+            {FloorJson.map((item) => (
+              <View style={styles.floorItem} key={item.id}>
+                <Image
+                  style={{
+                    width: Design.autoWidth(175),
+                    height: Design.autoWidth(175),
+                  }}
+                  source={{uri: item.url}}
+                />
+                <View style={{padding: Design.autoWidth(5)}}>
+                  <Text color={Theme.black} numberOfLines={2}>
+                    {item.goodsName}
+                  </Text>
+                  <View>
+                    <Text color={Theme.red} size={18}>
+                      <Text color={Theme.red} size={16}>
+                        ￥
+                      </Text>
+                      {item.godosPrice}
+                    </Text>
+                  </View>
+                </View>
+              </View>
+            ))}
           </View>
         </View>
       </ScrollView>
