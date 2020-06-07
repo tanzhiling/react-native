@@ -26,5 +26,21 @@ const Design = {
     );
     return number / PixelRatio.get();
   },
+  padding: function (padding, ...arg) {
+    return {
+      paddingLeft: arg.left ? Design.autoheight(padding) : 0,
+      paddingRight: arg.right ? Design.autoheight(padding) : 0,
+      paddingTop: arg.top ? Design.autoheight(padding) : 0,
+      paddingBottom: arg.bottom ? Design.autoheight(padding) : 0,
+    };
+  },
+  margin: function (margin, ...arg) {
+    return {
+      marginLeft: arg.left ? Design.autoheight(margin) : 0,
+      marginRight: arg.right ? Design.autoheight(margin) : 0,
+      marginTop: arg.top ? Design.autoheight(margin) : 0,
+      marginBottom: arg.bottom ? Design.autoheight(margin) : 0,
+    };
+  },
 };
 export default Design;

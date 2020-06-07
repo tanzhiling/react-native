@@ -13,7 +13,9 @@ import {
   BannerJson,
   BannerBgImage,
   NavigationJson,
+  MsJson,
   ActivityJson,
+  ActivityBgImage,
 } from '../../mock/home';
 import Design from '../../utils/design';
 import Theme from '../../utils/theme';
@@ -35,10 +37,13 @@ const styles = StyleSheet.create({
     paddingLeft: Design.autoWidth(15),
     paddingRight: Design.autoWidth(15),
   },
+  scrollView: {
+    paddingBottom: Design.autoheight(40),
+  },
   banner: {
     alignItems: 'center',
-    paddingTop: Design.autoheight(5),
-    paddingBottom: Design.autoheight(5),
+    paddingTop: Design.autoheight(10),
+    paddingBottom: Design.autoheight(10),
   },
   bannerBg: {
     height: Design.autoheight(80),
@@ -52,7 +57,7 @@ const styles = StyleSheet.create({
   },
   bannerSwiperImage: {
     height: Design.autoheight(110),
-    borderRadius: Design.autoheight(2),
+    borderRadius: Design.autoWidth(2),
   },
   navigation: {
     flexDirection: 'row',
@@ -69,43 +74,77 @@ const styles = StyleSheet.create({
     height: Design.autoWidth(50),
     marginBottom: Design.autoWidth(5),
   },
-  activity: {
+  ms: {
     backgroundColor: Theme.white,
-    margin: Design.autoWidth(10),
-    borderRadius: Design.autoheight(2),
+    marginTop: Design.autoWidth(10),
+    marginLeft: Design.autoWidth(10),
+    marginRight: Design.autoWidth(10),
+    borderRadius: Design.autoWidth(2),
   },
-  activityHead: {
+  msHead: {
     height: Design.autoWidth(36),
     justifyContent: 'center',
     paddingLeft: Design.autoWidth(10),
     paddingRight: Design.autoWidth(10),
   },
-  activityHeadLeftText: {
+  msHeadLeftText: {
     fontSize: Design.setSpText(14),
     fontWeight: '700',
     color: Theme.black,
   },
-  activityBody: {
+  msBody: {
     height: Design.autoWidth(120),
     flexDirection: 'row',
   },
-  activityBodyItem: {
+  msBodyItem: {
     width: Design.autoWidth(80),
     height: Design.autoWidth(120),
     justifyContent: 'center',
     alignItems: 'center',
   },
-  activityBodyImage: {
+  msBodyImage: {
     width: Design.autoWidth(68),
     height: Design.autoWidth(68),
   },
-  activityBodyPrice: {
+  msBodyPrice: {
     color: Theme.red,
     fontSize: Design.setSpText(16),
   },
-  activityBodyLastPrice: {
+  msBodyLastPrice: {
     textDecorationLine: 'line-through',
     color: Theme.grey,
+  },
+  activity: {
+    paddingLeft: Design.autoWidth(10),
+    paddingRight: Design.autoWidth(10),
+  },
+  activityHead: {
+    alignItems: 'center',
+    height: Design.autoWidth(40),
+    justifyContent: 'center',
+  },
+  activityBody: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  activityItemBg: {
+    width: Design.autoWidth(87),
+    height: Design.autoWidth(120),
+    marginBottom: Design.autoWidth(2),
+    alignItems: 'center',
+    position: 'relative',
+  },
+  activityItemImage: {
+    width: Design.autoWidth(63),
+    height: Design.autoWidth(63),
+    position: 'absolute',
+    top: Design.autoWidth(5),
+  },
+  activityItemText: {
+    position: 'absolute',
+    bottom: Design.autoWidth(5),
+    color: Theme.white,
   },
 });
 const Home = () => {
@@ -114,7 +153,7 @@ const Home = () => {
       <View style={styles.header}>
         <TextInput style={styles.search} placeholder="手机" />
       </View>
-      <ScrollView>
+      <ScrollView contentContainerStyle={styles.scrollView}>
         <ImageBackground
           style={styles.banner}
           imageStyle={styles.bannerBg}
@@ -149,29 +188,51 @@ const Home = () => {
             </View>
           ))}
         </View>
-        <View style={styles.activity}>
-          <View style={styles.activityHead}>
-            <Text style={styles.activityHeadLeftText}>限时秒杀</Text>
+        <View style={styles.ms}>
+          <View style={styles.msHead}>
+            <Text style={styles.msHeadLeftText}>限时秒杀</Text>
           </View>
-          <View style={styles.activityBody}>
+          <View style={styles.msBody}>
             <ScrollView horizontal>
-              {ActivityJson.map((item) => (
-                <View key={item.id} style={styles.activityBodyItem}>
+              {MsJson.map((item) => (
+                <View key={item.id} style={styles.msBodyItem}>
                   <Image
-                    style={styles.activityBodyImage}
+                    style={styles.msBodyImage}
                     resizeMode={'stretch'}
                     source={{uri: item.url}}
                   />
-                  <Text style={styles.activityBodyPrice}>￥{item.price}</Text>
-                  <Text style={styles.activityBodyLastPrice}>
-                    ￥{item.lastPrice}
-                  </Text>
+                  <Text style={styles.msBodyPrice}>￥{item.price}</Text>
+                  <Text style={styles.msBodyLastPrice}>￥{item.lastPrice}</Text>
                 </View>
               ))}
             </ScrollView>
           </View>
         </View>
-        <Text>滚动区域</Text>
+        <View style={styles.activity}>
+          <View style={styles.activityHead}>
+            <Text>精选会场</Text>
+          </View>
+          <View style={styles.activityBody}>
+            {ActivityJson.map((item) => (
+              <ImageBackground
+                key={item.id}
+                style={styles.activityItemBg}
+                source={{uri: ActivityBgImage}}>
+                <Image
+                  style={styles.activityItemImage}
+                  resizeMode={'stretch'}
+                  source={{uri: item.url}}
+                />
+                <Text style={styles.activityItemText}>{item.title}</Text>
+              </ImageBackground>
+            ))}
+          </View>
+        </View>
+        <View style={styles.activity}>
+          <View style={styles.activityHead}>
+            <Text>为你推荐</Text>
+          </View>
+        </View>
       </ScrollView>
     </View>
   );

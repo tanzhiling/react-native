@@ -24,7 +24,11 @@ const App = () => {
             <Stack.Screen name="GoodsDetail" component={GoodsDetail} />
           </>
         ) : (
-          <Stack.Screen name="login" component={Login} />
+          <Stack.Screen
+            name="login"
+            component={Login}
+            options={{headerShown: false}}
+          />
         )}
       </Stack.Navigator>
     </NavigationContainer>

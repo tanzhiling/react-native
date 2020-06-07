@@ -85,7 +85,7 @@ export const NavigationJson = [
       'http://m.360buyimg.com/mobilecms/s120x120_jfs/t1/97837/22/16281/7606/5e7d6411E0c0a91d6/93e0b359bfdf0239.png',
   },
 ];
-export const ActivityJson = [
+export const MsJson = [
   {
     id: '1',
     price: '699',
@@ -127,5 +127,65 @@ export const ActivityJson = [
     lastPrice: '298',
     url:
       'https://wqimg.jd.com/imgproxy/n7/s150x150_jfs/t1/131484/6/659/95528/5ed06346E8b5eb2ed/82d45ec797e80186.jpg',
+  },
+];
+export const ActivityBgImage =
+  'http://m.360buyimg.com/mobilecms/s184x242_jfs/t1/119463/19/6215/9161/5ec5339cE5046ff68/65f25d3d15e3be13.png';
+export const ActivityJson = [
+  {
+    id: '1',
+    title: '居家生活控',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/136623/2/1573/400928/5eda713bE5eca7ead/adde72dcd5af5e71.jpg',
+  },
+  {
+    id: '2',
+    title: '电脑数码',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/111359/11/8788/11946/5ed0b027E28b652c7/f1a253e20fcc892a.jpg',
+  },
+  {
+    id: '3',
+    title: '精品手机',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/110170/1/14833/61293/5ea9570aE25cb7db0/85a0ed8b2dc9e466.jpg',
+  },
+  {
+    id: '4',
+    title: '品质家电',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/134125/6/1070/204521/5ed5caf4E63677a31/bdf5adb4ae069a5e.jpg',
+  },
+  {
+    id: '5',
+    title: '时令生鲜',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/127698/28/4120/10114/5ed896b2E3e7bc691/5e18bb84b57ca087.jpg',
+  },
+  {
+    id: '6',
+    title: '功能箱包',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/113350/35/7504/3351/5ec491bdEa0510a85/401f309305c8ad5a.jpg',
+  },
+  {
+    id: '7',
+    title: '京东图书',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/49007/10/12160/512015/5d9094f6E658caa70/70b741214d87a994.jpg',
+  },
+  {
+    id: '8',
+    title: '口罩防护',
+    url:
+      'http://m.360buyimg.com/n1/s240x240_jfs/t1/130122/39/1496/231080/5ed9b285E178e5006/8ac7c94766a6a15e.jpg',
+  },
+];
+export const FloorJson = [
+  {
+    id: '1',
+    goodsName: '华为nova7se 5G手机 幻夜黑 8+128G 全网通',
+    url:
+      'http://img13.360buyimg.com/mobilecms/s372x372_jfs/t1/128049/10/1142/69776/5eba1316Ec6be02f9/9bdea4b7e2225a65.jpg',
   },
 ];
